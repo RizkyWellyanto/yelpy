@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ABC</title>
+
+        <link rel="stylesheet" type="text/css" href="{% static base.css" />
+</head>
+
+<style>
+#header {
+    width: 100%;
+    text-align: center;
+    border-bottom: 3px solid #e86721;
+}
+
+body {
+    font-family: sans-serif;
+}
+</style>
+
+<body>
+
+<div id="header">
+    {% block header %}
+    <h1>Welcome to ABC</h1>
+    {% endblock %}
+</div>
+
+<div id="content">
+    {% block content %}
+    Hello world
+    {% endblock %}
+</div>
+
+</body>
+</html>
