@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.core.context_processors import csrf
 
@@ -15,9 +15,14 @@ def auth(request):
     context = {}
     context.update(csrf(request))
     if username and password:
-        context['user'] = authenticate(username=username, password=password)
+        user = authenticate(username=username, password=password)
+        if user.is_active:
+            login(request, user)
+    return redirect('/')
 
-    return render(request, 'home.html', context)
+def log_out(request):
+    logout(request)
+    return redirect('/')
 
 
 def user_view(request, user_id):
