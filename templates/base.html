@@ -25,6 +25,15 @@ body {
 <div id="header">
     {% block header %}
     <h1>Welcome to ABC</h1>
+    {% if user.is_authenticated %}
+    Welcome back {{ user.username }}
+    {% else %}
+    <form action="/login/" method="post">{% csrf_token %}
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit">
+    </form>
+    {% endif %}
     {% endblock %}
 </div>
 
