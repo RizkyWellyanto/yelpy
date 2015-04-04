@@ -99,7 +99,7 @@ ROOT_URLCONF = 'yelpy.urls'
 WSGI_APPLICATION = 'yelpy.wsgi.application'
 
 TEMPLATE_DIRS = (
-    "/Users/Michael/Desktop/yelpy/templates",
+    "templates",
 )
 
 INSTALLED_APPS = (
