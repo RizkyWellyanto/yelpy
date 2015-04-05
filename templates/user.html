@@ -5,7 +5,7 @@
 
 {% for rating in ratings %}
 <div>
-    <a href="/users/{{ rater.id }}"><h3>{{ rating.rater }}</h3></a>
+    <a href="/users/{{ rating.rater.id }}"><h3>{{ rating.rater }}</h3></a>
     <p>{{ rating.score }}</p>
     <p>{{ rating.review }}</p>
 </div>
