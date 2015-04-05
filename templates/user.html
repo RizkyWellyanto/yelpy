@@ -3,13 +3,6 @@
 {% block content %}
 <h1>{{ viewed_user }}</h1>
 
-<!-- this will be the search bar, to search a user or friend @Rizky -->
-<div>
-    <form action="search_user/" method="post">{% csrf_token %}
-        <input type="text" name="searchName" placeholder="Username">
-    </form>
-</div>
-
 {% for rating in ratings %}
 <div>
     <a href="/users/{{ rater.id }}"><h3>{{ rating.rater }}</h3></a>

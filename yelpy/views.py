@@ -77,7 +77,7 @@ def user_view(request, user_id):
     context.update(csrf(request))
     context['user'] = request.user
     context['user_viewed'] = user_viewed
-    context['ratings'] = user.ratings.all()
+    context['ratings'] = user_viewed.ratings.all()
     return render(request, 'user.html', context)
 
 
