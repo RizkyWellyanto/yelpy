@@ -15,6 +15,14 @@ def home(request):
     return render(request, 'home.html', context)
 
 
+def welcome(request):
+    context = {}
+    context['user'] = request.user
+    context.update(csrf(request))
+
+    return render(request, 'welcome.html', context)
+
+
 def auth(request):
     context = {}
     context.update(csrf(request))
@@ -44,7 +52,6 @@ def register(request):
         username = request.POST.get('username', None)
         password = request.POST.get('password', None)
 
-        # Catch duplicate usernames
         try:
             user = User.objects.get(username=username)
         except User.DoesNotExist:
@@ -67,7 +74,7 @@ def register(request):
             print 'saved'
 
             user_url = '/users/%s' % user.id
-            return redirect(user_url)
+            return redirect('/welcome')
 
     return redirect('/')
 
@@ -113,3 +120,5 @@ def search_user(request):
         context['users'] = users
 
         return render(request, 'search.html', context)
+
+

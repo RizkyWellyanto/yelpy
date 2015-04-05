@@ -5,6 +5,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'yelpy.views.home'),
+    url(r'^welcome/$', 'yelpy.views.welcome'),
 
     url(r'^login/$', 'yelpy.views.auth'),
     url(r'^logout/$', 'yelpy.views.log_out'),
