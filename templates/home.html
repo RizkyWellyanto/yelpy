@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- fill in landing page -->
 
 {% if not user.is_authenticated %}
 <form action="/login/" method="post">{% csrf_token %}

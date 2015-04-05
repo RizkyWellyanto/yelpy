@@ -38,7 +38,7 @@
     {% block sidebar %}
     {% if user.is_authenticated %}
     <ul>
-        <li><a href="/users/{{ request.user }}">My Profile</a></li>
+        <li><a href="/users/{{ user.id }}">My Profile</a></li>
         <li><a href="/search">Search</a></li>
     </ul>
     {% endif %}
