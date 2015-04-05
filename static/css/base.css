@@ -1,5 +1,6 @@
 body {
     font-family: sans-serif;
+    background-color: #DDD;
 }
 
 /* Header styling */
@@ -41,10 +42,40 @@ body {
     width: 20%;
     float: left;
 }
+  #content
+  {
+    display: block;
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+    margin-top: 100px;
+    border: 6px solid #EEE;
+    overflow: hidden;
+    background-color: #FFF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  form
+  {
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+  }
+  input[placeholder="password"], input[placeholder="username"]
+  {
+    width: 86%;
+    margin: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #EEE !important;
+  }
 
-
-/* Content */
-#content {
-    width: 80%;
-    float: right;
-}
+  input, input[placeholder="username"]
+  {
+    width: 86%;
+    margin: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #EEE !important;
+  }
