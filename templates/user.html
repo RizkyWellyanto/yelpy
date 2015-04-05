@@ -16,19 +16,17 @@
 {% if viewed_user != user %}
     {% if user.is_authenticated %}
     <form action="create_comment/" method="post">{% csrf_token %}
-        <input type="text" name="review" placeholder="Review">
-        <input type="hidden" id="heart" value="1"><i id="clickable-heart" class="glyphicon glyphicon-heart-empty"></i>
-        <button class="btn btn-primary" type="submit">
-            Send Good Vybes<i class="glyphicon glyphicon-heart"></i>
-        </button>
+         <input type="text" name="review" placeholder="Review">
+         <input type="hidden" id="heart" value="1"><i id="clickable-heart" class="glyphicon glyphicon-heart-empty"></i>
+         <button class="btn btn-primary" type="submit">
+             Send Good Vybes<i class="glyphicon glyphicon-heart"></i>
+         </button>
     </form>
     {% else %}
     Please <a href="/">log in</a> to to good vybes
     {% endif %}
 {% endif %}
 </div>
-<<<<<<< HEAD
-=======
 
 <script type="text/javascript">
     $("#clickable-heart").click(function(){
@@ -39,6 +37,5 @@
         console.log(heart_val);
     });
 </script>
->>>>>>> 8270fab049d133c29fa69c9954165e25a9fb08d7
 
 {% endblock %}

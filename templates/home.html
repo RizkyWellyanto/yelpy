@@ -6,13 +6,13 @@
 <form action="/login/" method="post">{% csrf_token %}
     <input type="text" name="username" placeholder="username">
     <input type="password" name="password" placeholder="password">
-    <input type="submit" class="btn btn-primary" value="Login">
+    <input type="submit" class="btn btn-primary loginButtons" value="Login">
 </form>
 
 <form action="/register/" method="post">{% csrf_token %}
     <input type="text" name="username" placeholder="username">
     <input type="password" name="password" placeholder="password">
-    <input type="submit" class="btn btn-primary" value="Register">
+    <input type="submit" class="btn btn-primary loginButtons" value="Register">
 </form>
 </div>
 {% endif %}

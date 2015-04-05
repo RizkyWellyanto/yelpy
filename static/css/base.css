@@ -34,6 +34,17 @@ body {
     margin-top: -20px;
 }
 
+#searchBar{
+    width: 30%
+}
+
+.btn.btn-primary.loginButtons{
+    margin: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 86%;
+}
+
 /* Sidebar */
 #sidebar {
     margin-top: 20px;
@@ -64,14 +75,6 @@ body {
     float: none;
   }
   input[placeholder="password"], input[placeholder="username"]
-  {
-    width: 86%;
-    margin: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 2px solid #EEE !important;
-  }
-  .buttonsHome
   {
     width: 86%;
     margin: 20px;
