@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.context_processors import csrf
 
@@ -12,6 +13,7 @@ def home(request):
     context.update(csrf(request))
 
     return render(request, 'home.html', context)
+
 
 def auth(request):
     context = {}
@@ -31,6 +33,7 @@ def auth(request):
     return redirect('/')
 
 
+@login_required
 def log_out(request):
     logout(request)
     return redirect('/')
@@ -40,6 +43,14 @@ def register(request):
     if request.method == 'POST':
         username = request.POST.get('username', None)
         password = request.POST.get('password', None)
+
+        # Catch duplicate usernames
+        try:
+            user = User.objects.get(username=username)
+        except User.DoesNotExist:
+            pass
+        else:
+            return redirect('/')
 
         if username and password:
             user = User(
@@ -59,6 +70,7 @@ def register(request):
     return redirect('/')
 
 
+@login_required
 def user_view(request, user_id):
     user = User.objects.get(id=user_id)
     context = {}
@@ -68,6 +80,7 @@ def user_view(request, user_id):
     return render(request, 'user.html', context)
 
 
+@login_required
 def create_comment(request, user_id):
     for_user = User.objects.get(id=user_id)
     rater = request.user

@@ -5,26 +5,22 @@
     <meta charset="UTF-8">
     <title>ABC</title>
 
-        <link rel="stylesheet" type="text/css" href="{% static base.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
 </head>
-
-<style>
-#header {
-    width: 100%;
-    text-align: center;
-    border-bottom: 3px solid #e86721;
-}
-
-body {
-    font-family: sans-serif;
-}
-</style>
 
 <body>
 
 <div id="header">
     {% block header %}
-    <h1>Welcome to ABC</h1>
+    <a href="/"><h1>Welcome to ABC</h1></a>
     {% if user.is_authenticated %}
     Welcome back {{ user.username }} <a href="/logout">Logout</a>
     {% else %}
@@ -40,6 +36,11 @@ body {
         <input type="submit" value="Register">
     </form>
     {% endif %}
+    {% endblock %}
+</div>
+
+<div id="sidebar">
+    {% block sidebar %}
     {% endblock %}
 </div>
 

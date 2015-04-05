@@ -1,8 +1,31 @@
 #header {
     width: 100%;
     text-align: center;
-    border-bottom: 3px solid #e86721;
+    background-color: #e86721;
+    padding: 10px;
+    margin-top: -10px;
 }
+
+/* unvisited link */
+a:link {
+    color: #ffffff;
+}
+
+/* visited link */
+a:visited {
+    color: #ffffff;
+}
+
+/* mouse over link */
+a:hover {
+    color: #ffffff;
+}
+
+/* selected link */
+a:active {
+    color: #ffffff;
+}
+
 
 body {
     font-family: sans-serif;
