@@ -21,32 +21,15 @@
 <div id="header">
     {% block header %}
     <a href="/"><h1>Welcome to ABC</h1></a>
-    {% if user.is_authenticated %}
-    Welcome back {{ user.username }} <a href="/logout">Logout</a>
-    {% else %}
-    <form action="/login/" method="post">{% csrf_token %}
-        <input type="text" name="username" placeholder="username">
-        <input type="password" name="password" placeholder="password">
-        <input type="submit" value="Login">
-    </form>
-
-    <form action="/register/" method="post">{% csrf_token %}
-        <input type="text" name="username" placeholder="username">
-        <input type="password" name="password" placeholder="password">
-        <input type="submit" value="Register">
-    </form>
-    {% endif %}
+    {% if user.is_authenticated %}<a id="logout" href="/logout">Logout</a>{% endif %}
     {% endblock %}
 </div>
 
-<div id="sidebar">
-    {% block sidebar %}
-    {% endblock %}
-</div>
+{% block sidebar %}
+{% endblock %}
 
 <div id="content">
     {% block content %}
-    Hello world
     {% endblock %}
 </div>
 

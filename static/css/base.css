@@ -1,3 +1,8 @@
+body {
+    font-family: sans-serif;
+}
+
+/* Header styling */
 #header {
     width: 100%;
     text-align: center;
@@ -6,27 +11,40 @@
     margin-top: -10px;
 }
 
-/* unvisited link */
-a:link {
+#header a:link {
     color: #ffffff;
 }
 
-/* visited link */
-a:visited {
+#header a:visited {
     color: #ffffff;
 }
 
-/* mouse over link */
-a:hover {
+#header a:hover {
     color: #ffffff;
 }
 
-/* selected link */
-a:active {
+#header a:active {
     color: #ffffff;
 }
 
+#logout {
+    float: right;
+    margin-right: 10px;
+    margin-top: -20px;
+}
 
-body {
-    font-family: sans-serif;
+/* Sidebar */
+#sidebar {
+    padding-top: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    width: 20%;
+    float: left;
+}
+
+
+/* Content */
+#content {
+    width: 80%;
+    float: right;
 }
