@@ -24,8 +24,8 @@
     <a href="/"><h1>Welcome to Vybes</h1></a>
 
     {% if user.is_authenticated %}
-    <form action="search_user/" method="post">{% csrf_token %}
-        <input type="text" name="searchName" placeholder="Username">
+    <form action="/search_user/" method="post">{% csrf_token %}
+        <input type="text" name="search_name" placeholder="Username">
         <input type="submit" class="btn btn-primary" value="Search">
     </form>
     <a id="logout" href="/logout">Logout</a>
@@ -39,7 +39,6 @@
     {% if user.is_authenticated %}
     <ul>
         <li><a href="/users/{{ user.id }}">My Profile</a></li>
-        <li><a href="/search">Search</a></li>
     </ul>
     {% endif %}
     {% endblock %}

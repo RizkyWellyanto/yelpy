@@ -101,6 +101,14 @@ def create_comment(request, user_id):
     user_url = '/users/%s' % user_id
     return redirect(user_url)
 
-# This is the search for user method @Rizky
-def search_user(request, user_id):
-    target_user = request.searchName
+
+def search_user(request):
+    if request.method == 'POST':
+        search_name = request.POST.get('search_name', None)
+        users = User.objects.filter(username__icontains=search_name)
+
+        context = {}
+        context.update(csrf(request))
+        context['users'] = users
+
+        return render(request, 'search.html', context)
