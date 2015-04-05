@@ -58,11 +58,13 @@ def register(request):
             )
             user.set_password(password)
             user.save()
+            print 'saved'
 
             user_pro = UserProfile(
                 user=user,
             )
             user_pro.save()
+            print 'saved'
 
             user_url = '/users/%s' % user.id
             return redirect(user_url)
@@ -70,7 +72,6 @@ def register(request):
     return redirect('/')
 
 
-@login_required
 def user_view(request, user_id):
     viewed_user = User.objects.get(id=user_id)
     context = {}

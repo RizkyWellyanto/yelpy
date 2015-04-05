@@ -11,10 +11,12 @@
 </div>
 {% endfor %}
 
+{% if viewed_user != user %}
 <form action="create_comment/" method="post">{% csrf_token %}
     <input type="text" name="review" placeholder="Review">
     <input type="number" name="score" min="0" max="10">
     <input type="submit">
 </form>
+{% endif %}
 
 {% endblock %}
