@@ -3,7 +3,7 @@
 {% block content %}
 
 {% for u in users %}
-<div class="wide-content">
+<div id="wide-content">
     <h2><a href="/users/{{ u.id }}">{{ u.username }}</a></h2>
 </div>
 {% endfor %}

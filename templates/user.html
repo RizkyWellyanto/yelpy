@@ -17,7 +17,7 @@
     {% if user.is_authenticated %}
     <form action="create_comment/" method="post">{% csrf_token %}
         <input type="text" name="review" placeholder="Review">
-        <i class="glyphicon glyphicon-heart-empty"></i>
+        <input type="hidden" id="heart" value="1"><i id="clickable-heart" class="glyphicon glyphicon-heart-empty"></i>
         <button class="btn btn-primary" type="submit">
             Send Good Vybes<i class="glyphicon glyphicon-heart"></i>
         </button>
@@ -27,5 +27,13 @@
     {% endif %}
 {% endif %}
 </div>
+
+<script type="text/javascript">
+    $("#clickable-heart").click(function(){
+        var heart_val = parseInt($("#heart").val(), 10);
+        $("#heart").val(heart_val + 1);
+        console.log(heart_val);
+    });
+</script>
 
 {% endblock %}
