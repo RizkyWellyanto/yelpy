@@ -33,7 +33,9 @@
 <script type="text/javascript">
     $("#clickable-heart").click(function(){
         var heart_val = parseInt($("#heart").val(), 10);
-        $("#heart").val(heart_val + 1);
+        if (heart_val < 10) {
+            $("#heart").val(heart_val + 1);
+        }
         console.log(heart_val);
     });
 </script>
