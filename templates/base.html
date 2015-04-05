@@ -25,8 +25,16 @@
     {% endblock %}
 </div>
 
-{% block sidebar %}
-{% endblock %}
+<div id="sidebar">
+    {% block sidebar %}
+    {% if user.is_authenticated %}
+    <ul>
+        <li><a href="/users/{{ request.user }}">My Profile</a></li>
+        <li><a href="/search">Search</a></li>
+    </ul>
+    {% endif %}
+    {% endblock %}
+</div>
 
 <div id="content">
     {% block content %}

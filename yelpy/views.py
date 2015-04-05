@@ -72,10 +72,11 @@ def register(request):
 
 @login_required
 def user_view(request, user_id):
-    user = User.objects.get(id=user_id)
+    user_viewed = User.objects.get(id=user_id)
     context = {}
     context.update(csrf(request))
-    context['user'] = user
+    context['user'] = request.user
+    context['user_viewed'] = user_viewed
     context['ratings'] = user.ratings.all()
     return render(request, 'user.html', context)
 
