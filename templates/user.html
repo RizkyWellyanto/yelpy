@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<div id="wide-content">
 <h1>{{ viewed_user.username }}</h1>
 
 {% for rating in ratings %}
@@ -12,13 +14,18 @@
 {% endfor %}
 
 {% if viewed_user != user %}
-<form action="create_comment/" method="post">{% csrf_token %}
-    <input type="text" name="review" placeholder="Review">
-    <i class="glyphicon glyphicon-heart-empty"></i>
-    <button class="btn btn-primary" type="submit">
-        Send Good Vybes<i class="glyphicon glyphicon-heart"></i>
-    </button>
-</form>
+    {% if user.is_authenticated %}
+    <form action="create_comment/" method="post">{% csrf_token %}
+        <input type="text" name="review" placeholder="Review">
+        <i class="glyphicon glyphicon-heart-empty"></i>
+        <button class="btn btn-primary" type="submit">
+            Send Good Vybes<i class="glyphicon glyphicon-heart"></i>
+        </button>
+    </form>
+    {% else %}
+    Please <a href="/">log in</a> to to good vybes
+    {% endif %}
 {% endif %}
+</div>
 
 {% endblock %}
