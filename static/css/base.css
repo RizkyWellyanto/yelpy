@@ -71,6 +71,14 @@ body {
     margin-bottom: 10px;
     border: 2px solid #EEE !important;
   }
+  .buttonsHome
+  {
+    width: 86%;
+    margin: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #EEE !important;
+  }
 
 #wide-content {
     display: block;
