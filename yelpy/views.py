@@ -71,6 +71,7 @@ def user_view(request, user_id):
 def create_comment(request, user_id):
     for_user = User.objects.get(id=user_id)
     rater = request.user
+    #stop user from rating them
     score = request.POST.get('score', None)
     review = request.POST.get('review', None)
 
