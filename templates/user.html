@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>{{ user }}</h1>
+<h1>{{ viewed_user }}</h1>
 
 <!-- this will be the search bar, to search a user or friend @Rizky -->
 <div>
@@ -12,7 +12,7 @@
 
 {% for rating in ratings %}
 <div>
-    <h3>{{ rating.rater }}</h3>
+    <a href="/users/{{ rater.id }}"><h3>{{ rating.rater }}</h3></a>
     <p>{{ rating.score }}</p>
     <p>{{ rating.review }}</p>
 </div>

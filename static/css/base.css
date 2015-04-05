@@ -1,9 +1,50 @@
+body {
+    font-family: sans-serif;
+}
+
+/* Header styling */
 #header {
     width: 100%;
     text-align: center;
-    border-bottom: 3px solid #e86721;
+    background-color: #e86721;
+    padding: 10px;
+    margin-top: -10px;
 }
 
-body {
-    font-family: sans-serif;
+#header a:link {
+    color: #ffffff;
+}
+
+#header a:visited {
+    color: #ffffff;
+}
+
+#header a:hover {
+    color: #ffffff;
+}
+
+#header a:active {
+    color: #ffffff;
+}
+
+#logout {
+    float: right;
+    margin-right: 10px;
+    margin-top: -20px;
+}
+
+/* Sidebar */
+#sidebar {
+    padding-top: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    width: 20%;
+    float: left;
+}
+
+
+/* Content */
+#content {
+    width: 80%;
+    float: right;
 }
